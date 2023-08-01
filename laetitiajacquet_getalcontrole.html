@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Getal invoer controleren
+        </title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+
+            let getallen = [];
+
+            let aantal = prompt("Hoeveel getallen wil je ingeven?");
+
+            let controleAantal = function (input){
+                if (input == null){
+                    document.write("U hebt geannuleerd");
+                } else if (input.length == 0){
+                    document.write("U heeft niets ingegeven");
+                } else if (isNaN(aantal) == false) {
+                    return input;
+                } else {
+                    document.write("Dit is geen correcte ingave");
+                    return "0";
+                }
+            }
+
+            aantal = controleAantal(aantal);
+
+            if(aantal > 0){
+                for (let i = 0; i < aantal; i++){
+                    let getal = prompt(`Geef getal ${i+1} in`);
+
+                    let array = function (getal){
+                        getallen.push(getal);
+                    }
+
+                    let controleGetal = function (getal){
+                        if (getal == null){
+                            return "fout";
+                        } else if (getal.length == 0){
+                            return "fout";
+                        } else if (isNaN(getal) == true) {
+                            return "fout";
+                        } else {
+                            return getal;
+                        }
+                    }
+                    
+                    getal = controleGetal(getal);
+                    getal = array(getal);
+                }
+                document.write(getallen);
+            }
+        </script>
+    </body>
+</html>

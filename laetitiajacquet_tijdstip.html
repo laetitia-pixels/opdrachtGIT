@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tijdstip
+        </title>
+    </head>
+    <body>
+        <script>
+            let datum = new Date();
+            let uur = datum.getHours();
+            document.write(`<p>Het is nu ${uur} uur.</p>`);
+
+            if (uur > 0 && uur <= 7){
+                document.write("Goeienacht!");
+            }
+            else if (uur > 7 && uur <= 11) {
+                document.write("Goeiemorgen!");
+            }
+            else if (uur > 11 && uur <= 18) {
+                document.write("Goeiemiddag!");
+            }
+            else {
+                document.write("Goeie avond!");
+            }
+        </script>
+    </body>
+</html>
